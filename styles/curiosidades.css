@@ -1,0 +1,357 @@
+/* ---------------------- */
+/*   VARIÁVEIS CSS        */
+/* ---------------------- */
+:root {
+  /* Cores */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #EA8007;
+  --dark-brown: #301D08;
+  --light-brown: #5a3a1a;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --text-gray: #444444;
+  --bg-light: #f5f5f5;
+  
+  /* Espaçamentos */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xlarge: 3rem;
+  
+  /* Bordas */
+  --border-radius: 15px;
+  --border-radius-small: 10px;
+  --border-width: 2px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 6px 15px rgba(0, 0, 0, 0.2);
+  
+  /* Transições */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ---------------------- */
+/*   RESET E ESTILOS BASE */
+/* ---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ---------------------- */
+/*   HEADER               */
+/* ---------------------- */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  color: var(--text-light);
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), 
+              url('/imagens/turma.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar {
+  padding: var(--spacing-large) var(--spacing-xlarge);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  transition: transform var(--transition-normal);
+  border-radius: 50%;
+  border: var(--border-width) solid var(--text-light);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xlarge);
+  z-index: 1;
+}
+
+.titulo {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sub-titulo {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 800px;
+  margin: var(--spacing-small) 0 0;
+  color: var(--text-light);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Menu de Navegação */
+.navmenu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: var(--spacing-large);
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  padding: var(--spacing-small) 0;
+  position: relative;
+}
+
+.nav-link i {
+  font-size: 1.2rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+/* Menu Hamburguer (Mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-small);
+  z-index: 3;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  margin: 5px 0;
+  transition: var(--transition);
+}
+
+/* ---------------------- */
+/*   CONTEÚDO PRINCIPAL   */
+/* ---------------------- */
+.conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-xlarge) var(--spacing-medium);
+}
+
+.texto {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-gray);
+  text-align: center;
+}
+
+.tema {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: var(--dark-brown);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  background-color: var(--text-light);
+  border: var(--border-width) solid var(--accent-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xlarge);
+  margin: var(--spacing-xlarge) 0;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+  width: 100%;
+  max-width: 400px;
+  margin: var(--spacing-medium) auto;
+  display: block;
+  border-radius: var(--border-radius-small);
+  border: var(--border-width) solid var(--accent-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botão */
+.saiba-mais-btn {
+  background-color: var(--accent-color);
+  border: var(--border-width) solid var(--dark-brown);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-medium) var(--spacing-xlarge);
+  font-size: 1rem;
+  margin-top: var(--spacing-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-normal), transform var(--transition-fast);
+  display: inline-block;
+  color: var(--text-light);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.saiba-mais-btn:hover {
+  background-color: #cc6c05;
+  transform: translateY(-2px);
+}
+
+/* ---------------------- */
+/*   RODAPÉ               */
+/* ---------------------- */
+.rodape {
+  background-color: var(--dark-brown);
+  color: var(--text-light);
+  text-align: center;
+  padding: var(--spacing-xlarge);
+  margin-top: var(--spacing-xlarge);
+}
+
+/* Seção Turma */
+.turma {
+  text-align: center;
+  padding: var(--spacing-xlarge) var(--spacing-medium);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+/* ---------------------- */
+/*   RESPONSIVIDADE       */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: var(--spacing-medium);
+    flex-wrap: wrap;
+  }
+  
+  .navmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: 2;
+    padding-top: 80px;
+  }
+  
+  .navmenu.active {
+    transform: translateX(0);
+  }
+  
+  .nav-item {
+    margin: var(--spacing-medium) 0;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .header-content {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+  }
+  
+  .card {
+    padding: var(--spacing-large);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 80px;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+  }
+  
+  .sub-titulo {
+    font-size: 1.1rem;
+  }
+  
+  .card {
+    padding: var(--spacing-medium);
+  }
+}

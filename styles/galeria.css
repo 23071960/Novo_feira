@@ -1,0 +1,291 @@
+/* ---------------------- */
+/*   HEADER               */
+/* ---------------------- */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  color: var(--text-light);
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), 
+              url('/imagens/turma.png') center/cover no-repeat;
+}
+
+.nav-bar {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  border: 3px solid var(--text-light);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.titulo {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.sub-titulo {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 800px;
+  margin: 0.5rem 0 0;
+  color: var(--text-light);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Menu de Navegação */
+.navmenu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link i {
+  font-size: 1.2rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+/* Menu Hamburguer (Mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  z-index: 3;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  margin: 5px 0;
+  transition: var(--transition);
+}
+.sub_titulo{
+  font-size: 20px;
+  color: var(--gradient-blue); 
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-info {
+  padding: 15px;
+  background: white;
+}
+
+.upload-section {
+  padding: 20px;
+  background: #f5f5f5;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-form input, .upload-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.upload-form button {
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.image-preview-container {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto 20px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.preview-placeholder {
+  color: #6c757d;
+  text-align: center;
+  padding: 20px;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+/* Centralização dos títulos */
+* Ajuste para o título principal da galeria */
+.hero-content h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Ajuste para o título da seção de upload */
+.upload-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+/* ---------------------- */
+/*   FOOTER               */
+/* ---------------------- */
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 0 3rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-section {
+  padding: 0 1.5rem;
+}
+
+.footer-section h3, 
+.footer-section h4 {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 3rem; /* Aumentei o padding inferior */
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after,
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+}
