@@ -1,1 +1,1 @@
-# Novo_feira
+Página desenvolvida pela aluna Beatrz, para a Feira do Conhecimento, evento que acontece anualmente para a expposiçãode conteudos aprendidos na escola durante os primeiro e segundo trimestres. Os trabalho sãoescolhidos pelos alunos e orientados pelos professores. A exposição tem uma comissão organizadores sompsta pelos prfessores regentens e avaliados individualemnte.
